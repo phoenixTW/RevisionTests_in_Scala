@@ -1,7 +1,8 @@
 package com.mathematics
 
 class LogicalConversion {
-  def readBinary(decimalValue: Int) = {
-    Integer.toBinaryString(decimalValue).toInt
+  def readBinary(decimalValue: Any) = {
+    val inDecimal = decimalValue.toString.toInt
+    Integer.toBinaryString(inDecimal).toInt
   }
 }
