@@ -1,7 +1,7 @@
 package com.mathematics
 
 object LogicalConversion {
-  def readOctal(inOctal: Int) = {
+  def readOctal(inOctal: Any) = {
     val intOfInBinary = getIntRepresentation(inOctal)
     val numberOfBits = intOfInBinary.toString.toCharArray.length
     convertToDecimal(intOfInBinary, numberOfBits, 8)
