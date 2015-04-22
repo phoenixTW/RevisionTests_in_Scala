@@ -1,5 +1,6 @@
 package com.mathematics
 
+import com.mathematics.exception.NegativeValueException
 import org.specs2.mutable.Specification
 
 /**
@@ -17,5 +18,9 @@ class SeriesTest extends Specification {
 
     "throw NullPointerException for a null value" in {
       series.fibonacci(null) must (throwA[NullPointerException])}
+  }
+
+  "throw NegativeValueException for a null value" in {
+    series.fibonacci(-1) must (throwA[NegativeValueException])
   }
 }

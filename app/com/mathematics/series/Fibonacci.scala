@@ -1,11 +1,15 @@
 package com.mathematics.series
 
+import com.mathematics.exception.NegativeValueException
+
 /**
  * Created by kaustavc on 4/22/15.
  */
 class Fibonacci(firstValue: Int, secondValue: Int) {
 
   def calculate(term: Int): Int = {
+    if (term < 0) throw new NegativeValueException("Number should be positive")
+
     var first = firstValue
     var second = secondValue
 
