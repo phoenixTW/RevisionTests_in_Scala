@@ -1,6 +1,7 @@
 package com.mathematics
 
 import com.mathematics.exception.NegativeValueException
+import com.mathematics.exception.DoubleNumberException
 import org.specs2.mutable.Specification
 
 /**
@@ -22,5 +23,10 @@ class SeriesTest extends Specification {
 
   "throw NegativeValueException for a null value" in {
     series.fibonacci(-1) must (throwA[NegativeValueException])
+    series.fibonacci(-5) must (throwA[NegativeValueException])
+  }
+
+  "should throw DecimalNumberException for decimal numbers" in {
+    series.fibonacci(-0.5) must (throwA[DoubleNumberException])
   }
 }
