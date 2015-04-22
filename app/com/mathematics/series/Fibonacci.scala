@@ -8,7 +8,7 @@ import com.mathematics.exception.NegativeValueException
 class Fibonacci(firstValue: Int, secondValue: Int) {
 
   def calculate(term: Int): Int = {
-    if (term < 0) throw new NegativeValueException("Number should be positive")
+    if (term < 0) throw new NegativeValueException()
 
     var first = firstValue
     var second = secondValue
