@@ -4,9 +4,15 @@ package com.textData
  * Created by kaustavc on 4/24/15.
  */
 object Conversion {
-  def reverseWords(context: String) = "ehT dlrow si a yrev ediw .ecaps rO si ti ?ton"
+  def reverseWords(context: String): String = {
+    val words = context.split(" ")
+    words.map(word => reverseText(word)).mkString(" ")
+  }
 
-  def tidyText(context: String) = "The world is a very wide space."
+  def tidyText(context: String): String = {
+    val words = context.split(" ").filter(word  => word != "")
+    words.mkString(" ")
+  }
 
   def reverseText(context: String) = {
     context.reverse
